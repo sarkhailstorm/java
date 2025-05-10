@@ -2,7 +2,7 @@ package unit4;
 
 public class Main {
     public static void main(String[] args) {
-        // Creating Threads
+         // Creating Threads
         MyThread t = new MyThread();  // Create thread object
         t.start();                    // Start the thread
         // start() begins execution in a new thread.
@@ -104,10 +104,14 @@ public class Main {
 
         // Implementing Runnable Interface
         // Step 2: Create Thread object and start it
-        MyTask task = new MyTask();          // Create a Runnable task
-        Thread thread4 = new Thread(task);         // Pass task to Thread
-        thread4.start();                           // Start the thread
+        MyTask1 task1 = new MyTask1();          // Create a Runnable task
+        Thread thread4 = new Thread(task1);         // Pass task to Thread
 
+        MyTask2 task2 = new MyTask2();
+        Thread thread5 = new Thread(task2);
+
+        thread4.start();                           // Start the thread
+        thread5.start();                           // Start the thread
     }
 }
 
@@ -284,8 +288,13 @@ class SyncExample {
 
 // Implementing Runnable Interface
 // Step 1: Create a class that implements Runnable
-class MyTask implements Runnable {
+class MyTask1 implements Runnable {
     public void run() {
-        System.out.println("Thread is running by implementing Runnable!");
+        System.out.println("Thread1 is running by implementing Runnable!");
+    }
+}
+class MyTask2 implements Runnable {
+    public void run() {
+        System.out.println("Thread2 is running by implementing Runnable!");
     }
 }
